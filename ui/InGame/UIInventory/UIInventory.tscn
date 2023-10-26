@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctnl3jw7jsv44"]
+
+[ext_resource type="Script" path="res://ui/InGame/UIInventory/UIInventory.gd" id="1"]
+[ext_resource type="Script" path="res://ui/InGame/UIInventory/UIBuildButton.gd" id="3_wla0c"]
+[ext_resource type="Texture2D" uid="uid://b0bgnmi02jotv" path="res://ui/InGame/UIInventory/btn-dummy.png" id="4"]
+
+[node name="UIInventory" type="GridContainer"]
+custom_minimum_size = Vector2(216, 84)
+offset_left = 808.0
+offset_top = 76.0
+offset_right = 1024.0
+offset_bottom = 160.0
+size_flags_vertical = 8
+columns = 5
+script = ExtResource("1")
+dummyButtonTexture = ExtResource("4")
+buildButtonScript = ExtResource("3_wla0c")

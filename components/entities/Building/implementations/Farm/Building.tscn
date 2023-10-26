@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cubyig6yo78l6"]
+
+[ext_resource type="Script" path="res://components/entities/Building/Building.gd" id="1"]
+[ext_resource type="PackedScene" path="res://components/ComBase/ComBase.tscn" id="2_amkrm"]
+[ext_resource type="Texture2D" uid="uid://2s5noepyqq0c" path="res://components/entities/Building/implementations/Farm/SPBuilding.png" id="3"]
+
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 55.999
+height = 223.891
+
+[sub_resource type="ShaderMaterial" id="2"]
+
+[node name="Farm" type="Node2D" node_paths=PackedStringArray("sprite", "entityCollision")]
+script = ExtResource("1")
+sprite = NodePath("Sprite")
+entityCollision = NodePath("EntityCollision")
+
+[node name="EntityCollision" type="Area2D" parent="."]
+visible = false
+collision_mask = 257
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntityCollision"]
+position = Vector2(-3.55271e-15, 72)
+rotation = 1.57666
+shape = SubResource("1")
+
+[node name="Base" parent="." instance=ExtResource("2_amkrm")]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("2")
+texture = ExtResource("3")
+region_enabled = true
+region_rect = Rect2(-5, -4, 207, 250)

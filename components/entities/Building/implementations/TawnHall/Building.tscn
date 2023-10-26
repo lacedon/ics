@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://de7x2j7wapoh5"]
+
+[ext_resource type="Script" path="res://components/entities/Building/Building.gd" id="1_tc75i"]
+[ext_resource type="Texture2D" uid="uid://dqu45etvq0u5p" path="res://components/entities/Building/implementations/TawnHall/SPBuilding.png" id="2"]
+[ext_resource type="Script" path="res://components/entities/Building/implementations/TawnHall/Inventory.gd" id="2_1v4sk"]
+[ext_resource type="PackedScene" path="res://components/ComBase/ComBase.tscn" id="3_jo7v0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eg4u"]
+radius = 161.768
+height = 398.273
+
+[sub_resource type="ShaderMaterial" id="2"]
+
+[node name="TawnHall" type="Node2D" node_paths=PackedStringArray("sprite", "entityCollision")]
+script = ExtResource("1_tc75i")
+sprite = NodePath("Sprite")
+entityCollision = NodePath("EntityCollision")
+_inventoryFile = ExtResource("2_1v4sk")
+
+[node name="EntityCollision" type="Area2D" parent="."]
+visible = false
+collision_mask = 257
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntityCollision"]
+position = Vector2(6.91919e-07, 51)
+rotation = 0.989395
+shape = SubResource("CapsuleShape2D_6eg4u")
+
+[node name="Base" parent="." instance=ExtResource("3_jo7v0")]
+polygon = PackedVector2Array(-131.657, -23.1111, -120.686, -77.0371, -60.343, -161.778, 21.9429, -200.297, 76.8002, -177.185, 120.686, -115.556, 137.143, -38.5186, 115.2, 53.926, 32.9144, 138.667, -10.9715, 154.074, -65.8287, 146.371, -104.229, 107.852, -126.172, 53.926)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("2")
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(-5, -4, 359, 396.994)

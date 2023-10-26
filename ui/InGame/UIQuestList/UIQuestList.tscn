@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://ena6l6ekmffp"]
+
+[ext_resource type="Script" path="res://ui/InGame/UIQuestList/UIQuestList.gd" id="1_bml0q"]
+
+[node name="UIQuestList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bml0q")
+
+[node name="CreateQuest" type="Button" parent="."]
+layout_mode = 0
+offset_left = -112.0
+offset_right = -2.0
+offset_bottom = 31.0
+text = "Create Quest"
+
+[node name="QuestList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = -256.0
+offset_top = 32.0
+offset_bottom = 67.0
+max_text_lines = 2
+auto_height = true

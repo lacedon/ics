@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmqg3vhopy06x"]
+
+[ext_resource type="Script" path="res://ui/InGame/UIResources/UIResources.gd" id="1"]
+
+[node name="UIResources" type="HBoxContainer"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 1028.0
+offset_bottom = 18.0
+size_flags_horizontal = 3
+script = ExtResource("1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2

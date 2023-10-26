@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://gblxrlgsufk3"]
+
+[ext_resource type="Texture2D" uid="uid://bvvucvimqgqub" path="res://components/entities/Building/implementations/Castle/SPBuilding.png" id="2"]
+[ext_resource type="PackedScene" path="res://components/ComBase/ComBase.tscn" id="2_colx4"]
+[ext_resource type="Script" path="res://components/entities/Building/Building.gd" id="3"]
+
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 71.9988
+height = 271.901
+
+[sub_resource type="ShaderMaterial" id="2"]
+
+[node name="Castle" type="Node2D" node_paths=PackedStringArray("sprite", "entityCollision")]
+script = ExtResource("3")
+sprite = NodePath("Sprite")
+entityCollision = NodePath("EntityCollision")
+
+[node name="EntityCollision" type="Area2D" parent="."]
+visible = false
+collision_mask = 257
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntityCollision"]
+position = Vector2(-3.55271e-15, 72)
+rotation = 1.57666
+shape = SubResource("1")
+
+[node name="ComBase" parent="." instance=ExtResource("2_colx4")]
+polygon = PackedVector2Array(-93.2574, -15.4074, -76.8002, -53.926, -54.8573, -69.3334, 54.8573, -69.3334, 82.2859, -46.2223, 93.2574, -7.70372, 93.2574, 23.1111, 76.8002, 53.926, 54.8573, 69.3334, -54.8573, 69.3334, -76.8002, 53.926, -93.2574, 15.4074)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("2")
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(-5, -4, 259, 265)

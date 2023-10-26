@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2a2wp207jk4g"]
+
+[ext_resource type="PackedScene" uid="uid://ctnl3jw7jsv44" path="res://ui/InGame/UIInventory/UIInventory.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://ena6l6ekmffp" path="res://ui/InGame/UIQuestList/UIQuestList.tscn" id="2_tu1bb"]
+[ext_resource type="PackedScene" uid="uid://cmqg3vhopy06x" path="res://ui/InGame/UIResources/UIResources.tscn" id="3"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+alignment = 2
+
+[node name="Start" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+
+[node name="UIResources" parent="VBoxContainer/Start" instance=ExtResource("3")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1024.0
+offset_bottom = 14.0
+
+[node name="Middle" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+alignment = 2
+
+[node name="UIQuestList" parent="VBoxContainer/Middle" instance=ExtResource("2_tu1bb")]
+layout_mode = 2
+
+[node name="End" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Center" type="Control" parent="VBoxContainer/End"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+size_flags_stretch_ratio = 2.0
+
+[node name="UIInventory" parent="VBoxContainer/End" instance=ExtResource("1")]
+layout_mode = 2
+maxButtonNumber = null

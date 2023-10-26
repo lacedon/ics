@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjyhg7bs7go7w"]
+
+[ext_resource type="Script" path="res://components/ManagerQuest/ManagerQuest.gd" id="1_traw0"]
+
+[node name="ManagerQuest" type="Node2D"]
+script = ExtResource("1_traw0")

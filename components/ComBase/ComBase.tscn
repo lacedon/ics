@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Shader" path="res://shaders/fadeout.gdshader" id="1_j7qv5"]
+[ext_resource type="Texture2D" uid="uid://nikpg0g8gx4t" path="res://components/ComBase/BaseNoise.tres" id="2_jxx8y"]
+[ext_resource type="Texture2D" uid="uid://crmb6uvlxuuxl" path="res://components/ComBase/sand.png" id="3_rxg73"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ycle"]
+shader = ExtResource("1_j7qv5")
+shader_parameter/overlayColor = Color(0.75, 0.65, 0.4, 1)
+shader_parameter/size = Vector2(3.61, 2.5)
+shader_parameter/noise = ExtResource("2_jxx8y")
+
+[node name="Base" type="Polygon2D"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_8ycle")
+position = Vector2(0, 72)
+scale = Vector2(1.45833, 1.03846)
+texture = ExtResource("3_rxg73")
+polygon = PackedVector2Array(-76.8002, -15.4074, -60.3429, -46.2222, -43.8857, -53.9259, 49.3714, -53.9259, 71.3143, -30.8148, 76.8002, -15.4074, 76.8002, 15.4074, 65.8287, 38.5186, 49.3715, 53.926, -43.8857, 53.9259, -65.8287, 38.5186, -76.8002, 15.4074)
+uv = PackedVector2Array(-65.8286, -15.4074, -43.8857, -46.2222, 60.3429, -46.2222, 82.2857, -23.1111, 87.7714, 7.7037, 82.2857, 46.2222, 54.8571, 61.6296, -43.8857, 61.6296, -60.3429, 38.5185, -65.8286, 23.1111)
